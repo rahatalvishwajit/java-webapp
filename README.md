@@ -14,7 +14,7 @@ MySQL database is used in this project. Its dependecy is written into the pom.xm
 
 Table Queries.txt contains the SQL queries to create database with different required tables.
 
-App.java file contains main method. To run the program execute App.java file.
+App.java file contains main method. To run the program execute Index.html file.
 
 # Home Page:
 
