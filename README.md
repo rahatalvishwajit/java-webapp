@@ -9,7 +9,7 @@ There are multiple subjects and each subject has its own assignment categories -
 
 Whenever a particular assignment category is removed for a student, its particular data is deleted and overall score is updated for that particular student.
 
-# To exectute code successfully.
+# Configuration
 MySQL database is used in this project. Its dependecy is written into the pom.xml file. If you want to use another database, provide relevant dependency in pom.xml file, and respective driver class, url, username and password for database in JDBCConnection.java file. Apache Tomcat port number is to be set to 8081.
 
 Table Queries.txt contains the SQL queries to create database with different required tables.
