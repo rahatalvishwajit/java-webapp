@@ -1,4 +1,4 @@
-package webapp.rating;
+package webapp.rating.services;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,22 +9,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import webapp.rating.application.App;
+import webapp.rating.config.JDBCConnection;
 
-public class AddStudent extends HttpServlet {
+public class AddCategory extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String n = request.getParameter("studentName");
 		String sub = request.getParameter("subjectName");
 		String category = request.getParameter("category");
 		String date = request.getParameter("date");
 		String marks = request.getParameter("marks");
-		Connection conn = JDBCConnection.getConnection();
 		int m = Integer.parseInt(marks);
+		Connection conn = JDBCConnection.getConnection();
 		PrintWriter out = response.getWriter();
 		out.println("<head>\r\n"
 				+ "<meta charset=\"ISO-8859-1\">\r\n"
-				+ "<title>Add Student Information</title>\r\n"
+				+ "<title>Add Category</title>\r\n"
 				+ "<style type=\"text/css\">\r\n"
 				+ ".h2_1{\r\n"
 				+ "color: black;\r\n"
@@ -48,7 +51,7 @@ public class AddStudent extends HttpServlet {
 				+ "	opacity: 0.9;\r\n"
 				+ "}\r\n"
 				+ "</style>");
-		String str = App.addStudentData(conn, n, sub, category, date, m);
+		String str = App.addAssignmentCategory(conn, n, sub, category,date, m);
 		out.println("<body style=\"background-color: buttonface;\">\r\n"
 				+ "	<div class = \"h2_1\">\r\n"
 				+ "	<h1>Educational Institute Student Data Management System</h1>\r\n"
@@ -56,9 +59,10 @@ public class AddStudent extends HttpServlet {
 				+ "	<br>\r\n"
 				+ "	<h2 style=\"text-align: center;\">Message: " + str + "</h2>\r\n"
 				+ "	<br>");
-		//out.println("Message : " + App.addStudentData(conn, n, sub, category, date, m));
+		//out.println("Message : " + App.addAssignmentCategory(conn, n, sub, category,date, m));
 		out.print("<br>");
 		out.println("<form action=\"http://localhost:8081/Java WebApp/Index.html\"><button type = \"submit\" >Go Home</button></form></body>");
 
-}
+	}
+
 }

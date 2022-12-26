@@ -13,7 +13,7 @@
     <description></description>
     <display-name>AddStudent</display-name>
     <servlet-name>AddStudent</servlet-name>
-    <servlet-class>webapp.rating.AddStudent</servlet-class>
+    <servlet-class>webapp.rating.services.AddStudent</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AddStudent</servlet-name>
@@ -23,7 +23,7 @@
     <description></description>
     <display-name>RemoveStudent</display-name>
     <servlet-name>RemoveStudent</servlet-name>
-    <servlet-class>webapp.rating.RemoveStudent</servlet-class>
+    <servlet-class>webapp.rating.services.RemoveStudent</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>RemoveStudent</servlet-name>
@@ -33,7 +33,7 @@
     <description></description>
     <display-name>ViewStudentData</display-name>
     <servlet-name>ViewStudentData</servlet-name>
-    <servlet-class>webapp.rating.ViewStudentData</servlet-class>
+    <servlet-class>webapp.rating.services.ViewStudentData</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ViewStudentData</servlet-name>
@@ -43,7 +43,7 @@
     <description></description>
     <display-name>StudentWiseData</display-name>
     <servlet-name>StudentWiseData</servlet-name>
-    <servlet-class>webapp.rating.StudentWiseData</servlet-class>
+    <servlet-class>webapp.rating.services.StudentWiseData</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>StudentWiseData</servlet-name>
@@ -53,7 +53,7 @@
     <description></description>
     <display-name>SubjectWiseData</display-name>
     <servlet-name>SubjectWiseData</servlet-name>
-    <servlet-class>webapp.rating.SubjectWiseData</servlet-class>
+    <servlet-class>webapp.rating.services.SubjectWiseData</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>SubjectWiseData</servlet-name>
@@ -63,7 +63,7 @@
     <description></description>
     <display-name>AddRemoveCategory</display-name>
     <servlet-name>AddRemoveCategory</servlet-name>
-    <servlet-class>webapp.rating.AddRemoveCategory</servlet-class>
+    <servlet-class>webapp.rating.services.AddRemoveCategory</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AddRemoveCategory</servlet-name>
@@ -73,7 +73,7 @@
     <description></description>
     <display-name>AddCategory</display-name>
     <servlet-name>AddCategory</servlet-name>
-    <servlet-class>webapp.rating.AddCategory</servlet-class>
+    <servlet-class>webapp.rating.services.AddCategory</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AddCategory</servlet-name>
@@ -81,29 +81,19 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Addcategory</display-name>
-    <servlet-name>Addcategory</servlet-name>
-    <servlet-class>webapp.rating.Addcategory</servlet-class>
+    <display-name>RemoveCategory</display-name>
+    <servlet-name>RemoveCategory</servlet-name>
+    <servlet-class>webapp.rating.services.RemoveCategory</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Addcategory</servlet-name>
-    <url-pattern>/Addcategory</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>Removecategory</display-name>
-    <servlet-name>Removecategory</servlet-name>
-    <servlet-class>webapp.rating.Removecategory</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Removecategory</servlet-name>
-    <url-pattern>/Removecategory</url-pattern>
+    <servlet-name>RemoveCategory</servlet-name>
+    <url-pattern>/RemoveCategory</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>ViewAssignmentCategory</display-name>
     <servlet-name>ViewAssignmentCategory</servlet-name>
-    <servlet-class>webapp.rating.ViewAssignmentCategory</servlet-class>
+    <servlet-class>webapp.rating.services.ViewAssignmentCategory</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ViewAssignmentCategory</servlet-name>
@@ -113,7 +103,7 @@
     <description></description>
     <display-name>UpdateData</display-name>
     <servlet-name>UpdateData</servlet-name>
-    <servlet-class>webapp.rating.UpdateData</servlet-class>
+    <servlet-class>webapp.rating.services.UpdateData</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>UpdateData</servlet-name>

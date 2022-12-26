@@ -1,4 +1,4 @@
-package webapp.rating;
+package webapp.rating.application;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,6 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import webapp.rating.config.JDBCConnection;
+import webapp.rating.model.Assignments;
 
 public class App 
 {
@@ -21,7 +24,7 @@ public class App
 		}
 	}
 
-	static List<String> displayAssignmentCategory(Connection conn) {
+	public static List<String> displayAssignmentCategory(Connection conn) {
 
 		String sql = "SELECT STUDENTNAME, SUBJECT, ASSIGNMENTCATEGORY, DATE, MARKS FROM STUDENTS";
 		List<String> sb = new ArrayList<String>();
@@ -202,7 +205,7 @@ public class App
 	}
 
 	@SuppressWarnings("resource")
-	static String removeAssignmentCategory(Connection conn, String name1, String subject1, String assigncategory1) {
+	public static String removeAssignmentCategory(Connection conn, String name1, String subject1, String assigncategory1) {
 
 		try {
 			String sql = "SELECT MARKS FROM STUDENTS WHERE STUDENTNAME = ? AND SUBJECT = ? AND ASSIGNMENTCATEGORY = ?";
@@ -336,7 +339,7 @@ public class App
 		return "Error!";
 	}
 
-	static String addAssignmentCategory(Connection conn, String name, String subject, String assigncategory, String date, int marks) {
+	public static String addAssignmentCategory(Connection conn, String name, String subject, String assigncategory, String date, int marks) {
 
 		Assignments a = new Assignments(name, subject, assigncategory, date, marks);  
 		try {
@@ -348,7 +351,7 @@ public class App
 
 	}
 
-	static List<String> displaySubjectWise(Connection conn, String subjectName) {
+	public static List<String> displaySubjectWise(Connection conn, String subjectName) {
 
 		String sql = "SELECT * FROM OVERALLRATING WHERE SUBJECT = ?";
 		List<String> sb = new ArrayList<String>();
@@ -372,7 +375,7 @@ public class App
 
 	}
 
-	static List<String> displayStudentWise(Connection conn, String studentName) {
+	public static List<String> displayStudentWise(Connection conn, String studentName) {
 
 		String sql = "SELECT * FROM OVERALLRATING WHERE STUDENTNAME = ?";
 		List<String> sb = new ArrayList<String>();
@@ -399,7 +402,7 @@ public class App
 		return sb;
 	}
 
-	static List<String> viewData(Connection conn, String sname) {
+	public static List<String> viewData(Connection conn, String sname) {
 
 		String sql = "SELECT * FROM STUDENTS WHERE STUDENTNAME = ?";
 		List<String> sb = new ArrayList<String>();
@@ -424,7 +427,7 @@ public class App
 		return sb;
 	}
 
-	static String deleteData(Connection conn, String na) {
+	public static String deleteData(Connection conn, String na) {
 
 		String sql = "DELETE FROM STUDENTS WHERE STUDENTNAME = ?";
 		try {
@@ -446,7 +449,7 @@ public class App
 		}
 	}
 
-	static String addStudentData(Connection conn, String n, String sub, String category, String date, int marks) {
+	public static String addStudentData(Connection conn, String n, String sub, String category, String date, int marks) {
 
 		try {
 			Assignments a = new Assignments(n, sub, category, date, marks);

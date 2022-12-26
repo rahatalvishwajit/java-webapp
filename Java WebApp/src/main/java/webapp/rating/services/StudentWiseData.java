@@ -1,4 +1,4 @@
-package webapp.rating;
+package webapp.rating.services;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,18 +11,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class SubjectWiseData extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-  
+import webapp.rating.application.App;
+import webapp.rating.config.JDBCConnection;
 
+public class StudentWiseData extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+  
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String name = request.getParameter("subjectName");
+		String name = request.getParameter("studentName");
 		Connection conn = JDBCConnection.getConnection();
 		PrintWriter out = response.getWriter();
 		out.println("<head>\r\n"
 				+ "<meta charset=\"ISO-8859-1\">\r\n"
-				+ "<title>Subject Wise Data</title>\r\n"
+				+ "<title>Student Wise Data</title>\r\n"
 				+ "<style type=\"text/css\">\r\n"
 				+ ".h2_1{\r\n"
 				+ "color: black;\r\n"
@@ -48,14 +51,15 @@ public class SubjectWiseData extends HttpServlet {
 				+ "</style>\r\n"
 				+ "</head>");
 		try {
-			List<String> sb =  App.displaySubjectWise(conn, name);
-			//out.println("<b>Subject Name: " + sb.get(0) + "</b>");
+			List<String> sb =  App.displayStudentWise(conn, name);
+			//out.println("<b>Student Name: " + sb.get(0) + "</b>");
 			out.println("<body style=\"background-color: buttonface;\"><div class = \"h2_1\">\r\n"
 					+ "	<h1>Educational Institute Student Data Management System</h1>\r\n"
 					+ "	</div>\r\n"
 					+ "	<br>\r\n"
-					+ "	<h2 style=\"text-align: center;\">Subject Name: " + sb.get(0) + "</h2>\r\n"
+					+ "	<h2 style=\"text-align: center;\">Student Name: " + sb.get(0) + "</h2>\r\n"
 					+ "	<br>");
+
 			out.println("<table border = 1 width = 100% style=\"text-align: center; border-collapse: collapse;\"><tr><th>Subject</th><th>Test Score</th><th>Quiz Score</th><th>Lab Score</th><th>Project Score</th><th>Overall Score</th></tr>"); 
 
 			out.println();
@@ -76,7 +80,7 @@ public class SubjectWiseData extends HttpServlet {
 		catch(Exception e) {
 			out.println("Message : " + App.viewData(conn, name));
 		}
-		
+	
 	}
 
 }

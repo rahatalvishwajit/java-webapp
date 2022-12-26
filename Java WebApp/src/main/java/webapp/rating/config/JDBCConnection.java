@@ -1,4 +1,4 @@
-package webapp.rating;
+package webapp.rating.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +12,7 @@ public class JDBCConnection {
 		try {
 			
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "12345");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "123456789");
 		} catch (ClassNotFoundException e) {
 			System.out.println("Error - " + e);
 		} catch (SQLException e) {

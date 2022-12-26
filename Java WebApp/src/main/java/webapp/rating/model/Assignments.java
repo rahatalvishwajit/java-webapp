@@ -1,12 +1,12 @@
-package webapp.rating;
+package webapp.rating.model;
 
 public class Assignments {
 
-	String studentName;
-	String subject;
-	String assignmentCategory;
-	int points;
-	String date;
+	public String studentName;
+	public String subject;
+	public String assignmentCategory;
+	public int points;
+	public String date;
 
 
 

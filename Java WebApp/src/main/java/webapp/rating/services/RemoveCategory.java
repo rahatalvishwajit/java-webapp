@@ -1,4 +1,4 @@
-package webapp.rating;
+package webapp.rating.services;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,17 +9,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class RemoveStudent extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+import webapp.rating.application.App;
+import webapp.rating.config.JDBCConnection;
 
+
+public class RemoveCategory extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+   
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String name = request.getParameter("studentName");
+		String n = request.getParameter("studentName");
+		String sub = request.getParameter("subjectName");
+		String category = request.getParameter("category");
 		Connection conn = JDBCConnection.getConnection();
 		PrintWriter out = response.getWriter();
 		out.println("<head>\r\n"
 				+ "<meta charset=\"ISO-8859-1\">\r\n"
-				+ "<title>Remove Student Data</title>\r\n"
+				+ "<title>Remove Category</title>\r\n"
 				+ "<style type=\"text/css\">\r\n"
 				+ ".h2_1{\r\n"
 				+ "color: black;\r\n"
@@ -43,7 +50,8 @@ public class RemoveStudent extends HttpServlet {
 				+ "	opacity: 0.9;\r\n"
 				+ "}\r\n"
 				+ "</style>");
-		String str = App.deleteData(conn, name);
+		String str = App.removeAssignmentCategory(conn, n, sub, category);
+		//out.println("Message : " + App.removeAssignmentCategory(conn, n, sub, category));
 		out.println("<body style=\"background-color: buttonface;\">\r\n"
 				+ "	<div class = \"h2_1\">\r\n"
 				+ "	<h1>Educational Institute Student Data Management System</h1>\r\n"
@@ -52,7 +60,7 @@ public class RemoveStudent extends HttpServlet {
 				+ "	<h2 style=\"text-align: center;\">Message: " + str + "</h2>\r\n"
 				+ "	<br>");
 		out.print("<br>");
-		out.println("<form action=\"http://localhost:8081/Java WebApp/Index.html\"><button type = \"submit\">Go Home</button></form></body>");
+		out.println("<form action=\"http://localhost:8081/Java WebApp/Index.html\"><button type = \"submit\" >Go Home</button></form></body>");
 	}
 
 }
