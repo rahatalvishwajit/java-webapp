@@ -14,7 +14,7 @@ MySQL database is used in this project. Its dependecy is written into the pom.xm
 
 Table Queries.txt contains the SQL queries to create database with different required tables.
 
-App.java file contains main method. To run the program execute Index.html file.
+App.java file contains main method. Run the application on Tomcat server and hit the URL: http://localhost:8081/JavaWebApp/Index.html in browser.
 
 # Home Page:
 
@@ -31,3 +31,7 @@ App.java file contains main method. To run the program execute Index.html file.
 # View Student Data:
 
 ![View Data](https://user-images.githubusercontent.com/73383343/136647058-7d3eabf5-e9f6-49a4-a849-886a80f1936a.JPG)
+
+# Database
+
+![Database](https://user-images.githubusercontent.com/73383343/209629754-9ad785b9-afe0-4cdb-8018-0aa7643183a7.png)
