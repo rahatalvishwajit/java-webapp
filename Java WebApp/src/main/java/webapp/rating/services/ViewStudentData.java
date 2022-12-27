@@ -72,7 +72,7 @@ public class ViewStudentData extends HttpServlet {
 				}
 			}
 			out.print("</table>");
-			out.println("<form action=\"http://localhost:8081/Java WebApp/Index.html\"><button type = \"submit\">Go Home</buttom></form></body>");
+			out.println("<form action=\"http://localhost:8081/JavaWebApp/Index.html\"><button type = \"submit\">Go Home</buttom></form></body>");
 
 			out.close();
 		}

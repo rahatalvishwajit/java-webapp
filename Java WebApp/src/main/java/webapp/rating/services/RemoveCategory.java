@@ -60,7 +60,7 @@ public class RemoveCategory extends HttpServlet {
 				+ "	<h2 style=\"text-align: center;\">Message: " + str + "</h2>\r\n"
 				+ "	<br>");
 		out.print("<br>");
-		out.println("<form action=\"http://localhost:8081/Java WebApp/Index.html\"><button type = \"submit\" >Go Home</button></form></body>");
+		out.println("<form action=\"http://localhost:8081/JavaWebApp/Index.html\"><button type = \"submit\" >Go Home</button></form></body>");
 	}
 
 }

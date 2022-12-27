@@ -61,7 +61,7 @@ public class AddStudent extends HttpServlet {
 				+ "	<br>");
 		//out.println("Message : " + App.addStudentData(conn, n, sub, category, date, m));
 		out.print("<br>");
-		out.println("<form action=\"http://localhost:8081/Java WebApp/Index.html\"><button type = \"submit\" >Go Home</button></form></body>");
+		out.println("<form action=\"http://localhost:8081/JavaWebApp/Index.html\"><button type = \"submit\" >Go Home</button></form></body>");
 
 }
 }

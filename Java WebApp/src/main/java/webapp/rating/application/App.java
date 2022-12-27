@@ -228,7 +228,12 @@ public class App
 				while(rs.next()) {
 					seq = rs.getInt(1);
 				}
-				sql = "UPDATE OVERALLRATING SET OVERALLSCORE = OVERALLSCORE - TESTSCORE, TESTSCORE = ((TESTSCORE * ?) - (? * 0.4)) / (? - 1), OVERALLSCORE = OVERALLSCORE + TESTSCORE  WHERE STUDENTNAME = ? AND SUBJECT = ?";
+				if (seq == 1) {
+					sql = "UPDATE OVERALLRATING SET OVERALLSCORE = OVERALLSCORE - TESTSCORE, TESTSCORE = ((TESTSCORE * ?) - (? * 0.4)) / (?), OVERALLSCORE = OVERALLSCORE + TESTSCORE  WHERE STUDENTNAME = ? AND SUBJECT = ?";
+				}
+				else {
+					sql = "UPDATE OVERALLRATING SET OVERALLSCORE = OVERALLSCORE - TESTSCORE, TESTSCORE = ((TESTSCORE * ?) - (? * 0.4)) / (? - 1), OVERALLSCORE = OVERALLSCORE + TESTSCORE  WHERE STUDENTNAME = ? AND SUBJECT = ?";
+				}
 				st = conn.prepareStatement(sql);
 				st.setInt(1, seq);
 				st.setInt(2, marks);
@@ -254,7 +259,12 @@ public class App
 				while(rs.next()) {
 					seq = rs.getInt(1);
 				}
-				sql = "UPDATE OVERALLRATING SET QUIZSCORE = ((QUIZSCORE * ?) - (? * 0.2)) / (? - 1), OVERALLSCORE = (TESTSCORE + QUIZSCORE + LABSCORE + PROJECTSCORE) WHERE STUDENTNAME = ? AND SUBJECT = ?";
+				if (seq == 1) {
+					sql = "UPDATE OVERALLRATING SET QUIZSCORE = ((QUIZSCORE * ?) - (? * 0.2)) / (?), OVERALLSCORE = (TESTSCORE + QUIZSCORE + LABSCORE + PROJECTSCORE) WHERE STUDENTNAME = ? AND SUBJECT = ?";
+				}
+				else {
+					sql = "UPDATE OVERALLRATING SET QUIZSCORE = ((QUIZSCORE * ?) - (? * 0.2)) / (? - 1), OVERALLSCORE = (TESTSCORE + QUIZSCORE + LABSCORE + PROJECTSCORE) WHERE STUDENTNAME = ? AND SUBJECT = ?";
+				}
 				st = conn.prepareStatement(sql);
 				st.setInt(1, seq);
 				st.setInt(2, marks);
@@ -279,7 +289,12 @@ public class App
 				while(rs.next()) {
 					seq = rs.getInt(1);
 				}
-				sql = "UPDATE OVERALLRATING SET LABSCORE = ((LABSCORE * ?) - (? * 0.1)) / (? - 1), OVERALLSCORE = (TESTSCORE + QUIZSCORE + LABSCORE + PROJECTSCORE) WHERE STUDENTNAME = ? AND SUBJECT = ?";
+				if (seq == 1) {
+					sql = "UPDATE OVERALLRATING SET LABSCORE = ((LABSCORE * ?) - (? * 0.1)) / (?), OVERALLSCORE = (TESTSCORE + QUIZSCORE + LABSCORE + PROJECTSCORE) WHERE STUDENTNAME = ? AND SUBJECT = ?";
+				}
+				else {
+					sql = "UPDATE OVERALLRATING SET LABSCORE = ((LABSCORE * ?) - (? * 0.1)) / (? - 1), OVERALLSCORE = (TESTSCORE + QUIZSCORE + LABSCORE + PROJECTSCORE) WHERE STUDENTNAME = ? AND SUBJECT = ?";
+				}
 				st = conn.prepareStatement(sql);
 				st.setInt(1, seq);
 				st.setInt(2, marks);
@@ -304,7 +319,12 @@ public class App
 				while(rs.next()) {
 					seq = rs.getInt(1);
 				}
-				sql = "UPDATE OVERALLRATING SET PROJECTSCORE = ((PROJECTSCORE * ?) - (? * 0.3)) / (? - 1), OVERALLSCORE = (TESTSCORE + QUIZSCORE + LABSCORE + PROJECTSCORE) WHERE STUDENTNAME = ? AND SUBJECT = ?";
+				if (seq == 1) {
+					sql = "UPDATE OVERALLRATING SET PROJECTSCORE = ((PROJECTSCORE * ?) - (? * 0.3)) / (?), OVERALLSCORE = (TESTSCORE + QUIZSCORE + LABSCORE + PROJECTSCORE) WHERE STUDENTNAME = ? AND SUBJECT = ?";
+				}
+				else {
+					sql = "UPDATE OVERALLRATING SET PROJECTSCORE = ((PROJECTSCORE * ?) - (? * 0.3)) / (? - 1), OVERALLSCORE = (TESTSCORE + QUIZSCORE + LABSCORE + PROJECTSCORE) WHERE STUDENTNAME = ? AND SUBJECT = ?";
+				}
 				st = conn.prepareStatement(sql);
 				st.setInt(1, seq);
 				st.setInt(2, marks);

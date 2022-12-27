@@ -69,7 +69,7 @@ public class ViewAssignmentCategory extends HttpServlet {
 			}
 			
 			out.print("</table>");
-			out.println("<form action=\"http://localhost:8081/Java WebApp/Index.html\"><button type = \"submit\">Go Home</button></form></body>");
+			out.println("<form action=\"http://localhost:8081/JavaWebApp/Index.html\"><button type = \"submit\">Go Home</button></form></body>");
 
 			out.close();
 		}
